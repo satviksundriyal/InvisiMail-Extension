@@ -1,4 +1,4 @@
-const API_KEY = 'b84ed0287377ddebeb80447f5437bf6f25714dd3a4484ba0f9bed1de2710aead'; // Replace with your actual API key
+const API_KEY = 'YOUR API KEY OF mailslurp.com'; // Replace with your actual API key
 let currentInboxId = null;
 
 async function generateEmail() {
