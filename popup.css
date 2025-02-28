@@ -1,0 +1,208 @@
+:root {
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text: #e0e0e0;
+  --muted: #a0a0a0;
+  --input-border: #333;
+  --hover-surface: #2a2a2a;
+}
+
+/* Light mode overrides */
+body.light-mode {
+  --background: #f3f4f6;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --input-border: #e5e7eb;
+  --hover-surface: #f8fafc;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui;
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.theme-toggle {
+  border: none;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#emailInput {
+  flex: 1;
+  padding: 1rem;
+  background: var(--surface);
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary-btn {
+  background: #333;
+  color: var(--text);
+}
+
+/* Override secondary button in light mode */
+body.light-mode .secondary-btn {
+  background: #e5e7eb;
+  color: var(--text);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.email-list {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.email-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid #333;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.email-item:hover {
+  background: var(--hover-surface);
+}
+
+.email-sender {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.email-subject {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-date {
+  color: var(--muted);
+  text-align: right;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Back button styling for email modal */
+.back-button {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* From Uiverse.io by JesusRafaelNavaCruz */
+.loader {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-top: 8px solid #fff;
+  border-left: 8px solid #fff;
+  border-right: 8px solid #ff00;
+  animation: loader 0.7s infinite linear;
+  margin: 1rem auto;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}

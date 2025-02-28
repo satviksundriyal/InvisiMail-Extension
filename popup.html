@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvisiMail - Temporary Email</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Link external CSS file -->
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Logo displayed in the popup -->
+      <img src="icons/icon128.png" alt="InvisiMail Logo" style="width: 50px; height: auto;" />
+      <div class="logo">InvisiMail</div>
+      <p>Temporary Email Service powered by MailSlurp</p>
+      <button id="themeToggle" class="theme-toggle">
+        <i class="fas fa-adjust"></i> Toggle Theme
+      </button>
+    </header>
+
+    <div class="controls">
+      <input type="text" id="emailInput" readonly placeholder="Generate email to begin" />
+      <button id="newAddress" class="primary-btn">
+        <i class="fas fa-plus"></i> New Address
+      </button>
+      <button id="refreshEmails" class="secondary-btn">
+        <i class="fas fa-sync"></i> Refresh
+      </button>
+      <button id="copyEmail" class="secondary-btn">
+        <i class="fas fa-copy"></i> Copy Email
+      </button>
+    </div>
+
+    <div class="email-list" id="emailList">
+      <!-- Emails will be inserted here -->
+    </div>
+  </div>
+
+  <div class="modal" id="emailModal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- Include local DOMPurify file -->
+  <script src="dompurify.min.js"></script>
+  <!-- Link external JS file -->
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "InvisiMail Extension",
+    "version": "1.0",
+    "description": "Temporary Email Service powered by MailSlurp",
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "InvisiMail",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "permissions": [
+      "storage",
+      "clipboardWrite"
+    ],
+    "host_permissions": [
+      "https://api.mailslurp.com/"
+    ]
+  }
+  
